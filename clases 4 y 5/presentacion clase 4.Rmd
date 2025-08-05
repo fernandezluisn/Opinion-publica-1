@@ -2,7 +2,7 @@
 title: "Clases 4 y 5 Investigación electoral y de Opinión Pública Aplicada I"
 subtitle: "Tratamientos para la corrección de la no respuesta"
 author: "Luis Nahuel Fernández"
-date: "2024-08-06"
+date: "2025-08-06"
 output:
   rmdformats::material:
     code_folding: hide
@@ -24,7 +24,7 @@ library(kableExtra)
 <h2>Maestría en generación y análisis de datos estadísticos</h2>
 <h3>Investigación electoral y de Opinión Pública Aplicada I: clases 4 y 5</h3>
 <h3>Lic. Luis Nahuel Fernández</h3>
-<h4>2024</h4>
+<h4>2025</h4>
 
 </div>
 
@@ -267,8 +267,7 @@ Supongamos que realizamos una encuesta a personas de ambos sexos mayores de 64 a
 
 ```{r}
 # la base personas debe haber quedado de la clase anterior
-Base.personas.EPH <- read.csv2(here("clase 3","ejercicio","EPH_usu_1er_Trim_2024_txt",
-                                   "usu_individual_T124.txt"))
+Base.personas.EPH <- read.csv2("usu_individual_T124.txt")
 
 
 Base.personas.EPH %>% filter(AGLOMERADO %in% c(13,36))->cordoba
@@ -503,6 +502,7 @@ data %>% group_by(AGLOMERADO, CH04) %>% summarise(pondRaking=sum(calibracionRaki
   kbl(caption = "Varones y mujeres por aglomerado con no respuesta ajustada por PS") %>%
   kable_classic(full_width = F, html_font = "Cambria")
 ```
+
 Comparamos los ponderadores ajustados mediante propensity score con otros reponderados mediante pos estratificación.
 
 ```{r}
